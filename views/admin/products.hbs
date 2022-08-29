@@ -1,0 +1,20 @@
+<div class="products">
+    {{#each products}}
+    <div class="product-item">
+        <img src="{{img}}" alt="">
+        <h2>{{name}}</h2>
+        <p>{{about}}</p>
+        <p>{{price}}</p>
+        <a href="/admin/products/edit/{{_id}}">Edit</a>
+        <a href="/admin/products/delete/{{_id}}">Delete</a>
+    </div>
+    {{/each}}
+</div>
+<div class="productAdd">
+    <form action="/admin/products/add" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="number" name="price" placeholder="price" required>
+        <input type="file" name="img" required>
+        <button type="submit">send</button>
+    </form>
+</div>
